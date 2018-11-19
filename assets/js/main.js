@@ -77,16 +77,16 @@ class Substance extends RequestFrame {
   checkMoveDirection() {
     let availableCells = [];
 
-    if (this.partition.data.position.x !== 0)
+    if (this.partition.data.position.y !== 0)
       availableCells.push(this.game.objects[this.partition.data.position.x][this.partition.data.position.y - 1]);
 
-    if (this.partition.data.position.x !== this.game.objects.length - 1)
+    if (this.partition.data.position.y !== this.game.objects.length - 1)
       availableCells.push(this.game.objects[this.partition.data.position.x][this.partition.data.position.y + 1]);
 
-    if (this.partition.data.position.y !== 0)
+    if (this.partition.data.position.x !== 0)
       availableCells.push(this.game.objects[this.partition.data.position.x - 1][this.partition.data.position.y]);
 
-    if (this.partition.data.position.y !== this.game.objects.length - 1)
+    if (this.partition.data.position.x !== this.game.objects.length - 1)
       availableCells.push(this.game.objects[this.partition.data.position.x + 1][this.partition.data.position.y]);
 
     availableCells = availableCells.filter((el) => {
@@ -174,7 +174,7 @@ class Game {
 
   loop() {
 
-    if (this.frame % 60 === 0) {
+    if (this.frame % 30 === 0) {
       this.iterate();
     }
 
