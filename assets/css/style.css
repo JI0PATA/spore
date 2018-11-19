@@ -1,0 +1,55 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+:root {
+	--size: 30px;
+	--count: 10;
+}
+
+#field {
+	width: calc(var(--size) * var(--count));
+	height: calc(var(--size) * var(--count));
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+#field > div {
+	width: var(--size);
+	height: var(--size);
+	border: 1px solid #000;
+	position: relative;
+}
+
+#field > div:hover {
+	border-color: red;
+}
+
+#field > div.cell {
+	background: green;
+}
+
+#field > div.substance:after {
+	content: "";
+	width: 60%;
+	height: 60%;
+	background: yellow;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
