@@ -149,6 +149,18 @@ class Game {
       if (ev.which === 49) this.data.curAction = 'cell';
       if (ev.which === 50) this.data.curAction = 'substance';
     });
+
+    on($('#cell_button'), 'click', _ => {
+      this.data.curAction = 'cell';
+      $('#cell_button').classList.add('active');
+      $('#substance_button').classList.remove('active');
+    });
+
+    on($('#substance_button'), 'click', _ => {
+      this.data.curAction = 'substance';
+      $('#cell_button').classList.remove('active');
+      $('#substance_button').classList.add('active');
+    })
   }
 
   checkClickPartition(partition) {
